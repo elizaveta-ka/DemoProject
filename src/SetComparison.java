@@ -107,6 +107,7 @@ public class SetComparison {
         if (n < m)
             fileWrite.write((tempFirstString2 + ":" + tempSecondString2 + "\n").getBytes());
         randomAccessFile.close();
+        fileWrite.close();
         return fileWrite;
     }
 

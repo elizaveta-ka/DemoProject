@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="444cc0a7-7a9e-4f8e-9698-0f46f976d850" name="Changes" comment="correct method comparisonString" />
+    <list default="true" id="444cc0a7-7a9e-4f8e-9698-0f46f976d850" name="Changes" comment="correct README">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SetComparison.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SetComparison.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +77,7 @@
       <workItem from="1662023665508" duration="2674000" />
       <workItem from="1662027043947" duration="46729000" />
       <workItem from="1662120262330" duration="1168000" />
-      <workItem from="1662125688610" duration="331000" />
+      <workItem from="1662125688610" duration="1088000" />
     </task>
     <task id="LOCAL-00001" summary="Test task for reading from a file(RandomAccessFile). Comparison of maximally similar strings. Write to file">
       <created>1662118361047</created>
@@ -96,7 +100,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662125997975</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="correct method comparisonString">
+      <created>1662126049058</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662126049058</updated>
+    </task>
+    <task id="LOCAL-00005" summary="correct README">
+      <created>1662126395213</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1662126395213</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +135,7 @@
     <MESSAGE value="Test task for reading from a file(RandomAccessFile). Comparison of maximally similar strings. Write to file" />
     <MESSAGE value="add README" />
     <MESSAGE value="correct method comparisonString" />
-    <option name="LAST_COMMIT_MESSAGE" value="correct method comparisonString" />
+    <MESSAGE value="correct README" />
+    <option name="LAST_COMMIT_MESSAGE" value="correct README" />
   </component>
 </project>

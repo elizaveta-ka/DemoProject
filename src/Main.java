@@ -7,7 +7,7 @@ public class Main {
         SetComparison comparison = new SetComparison();
         comparison.openReadFile(Path.of("input.txt"));
         comparison.openWriteFile(Path.of("output.txt"));
-        RandomAccessFile file = comparison.comparisonString();
-        file.close();
+        comparison.comparisonString();
+
     }
 }
