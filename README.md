@@ -1,5 +1,6 @@
 # DemoProject
-Консольное приложение на Java(главный класс называть Main), в которое читает из файла input.txt входные данные:
+Console application in Java (the main class is called Main), into which it reads input data from the input.txt file:
+
 n - число
 далее n строк
 m - число
@@ -50,7 +51,7 @@ ouput.txt:
 Бетон с присадкой:присадка бля бетона
 доставка:?
 
-Программа должна сопоставить максимально похожие строки из первого множества со строками из второго множества (одна к одной) и вывести результат в файл output.txt.
+The program must match the most similar lines from the first set with the lines from the second set (one to one) and output the result to a file output.txt.
 
 
 
