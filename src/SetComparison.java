@@ -38,48 +38,60 @@ public class SetComparison {
      * This method uses RandomAccessFile to read the lines of the file in the correct order.
      * Then compares the two sets by moving the pointer through the file
      * At the end closes file stream.
+     * @return RandomAccessFile file
      * @throws IOException
      */
-    public void comparisonString() throws IOException {
+    public RandomAccessFile comparisonString() throws IOException {
         int n = Integer.parseInt(randomAccessFile.readLine());
         long firstTemp = randomAccessFile.getFilePointer();
+
         for (int i = 0; i < n; i++) {
             randomAccessFile.readLine();
         }
         int m = Integer.parseInt(randomAccessFile.readLine());
         long secondTemp = randomAccessFile.getFilePointer();
+
         for (int i = 0; i < m; i++) {
             randomAccessFile.readLine();
         }
+
         String tempFirstString2 = null;
         String tempSecondString2 = "?";
+        int tempCoeff;
+        String tempFirstString;
+        String tempSecondString;
+        long rowFirstPointer;
+        long rowSecondPointer;
+        int coeff2;
+
         for (int i = 0; i < n; i++) {
 
-            int tempCoeff = 0;
-            String tempFirstString = null;
-            String tempSecondString = "?";
-            long rowFirstPointer = firstTemp;
-            long rowSecondPointer = secondTemp;
+            tempCoeff = 0;
+            tempFirstString = null;
+            tempSecondString = "?";
+            rowFirstPointer = firstTemp;
+            rowSecondPointer = secondTemp;
 
             randomAccessFile.seek(rowFirstPointer);
 
             for (int j = 0; j < m; j++) {
-                String p = randomAccessFile.readLine();
-                String convertedString1 = new String(p.getBytes("ISO-8859-1"), "UTF8");
+                String str1 = randomAccessFile.readLine();
+                String convertedString1 = new String(str1.getBytes("ISO-8859-1"), "UTF8");
                 randomAccessFile.seek(rowSecondPointer);
-                String p1 = randomAccessFile.readLine();
+                String str2 = randomAccessFile.readLine();
                 rowSecondPointer = randomAccessFile.getFilePointer();
-                String convertedString2 = new String(p1.getBytes("ISO-8859-1"), "UTF8");
+                String convertedString2 = new String(str2.getBytes("ISO-8859-1"), "UTF8");
                 tempFirstString = convertedString1;
-                int coeff2 = 0;
+                coeff2 = 0;
 
                 //Getting the most similar rows
                 for (int k = 0; k < getTokens(convertedString1).size(); k++) {
                     for (int l = 0; l < getTokens(convertedString2).size(); l++) {
-                        coeff2 += coefficientCalculate(normalizeSentence(getTokens(convertedString1).get(k)), normalizeSentence(getTokens(convertedString2).get(l)));
+                        coeff2 += calculateCoefficient(normalizeSentence(getTokens(convertedString1).get(k)), normalizeSentence(getTokens(convertedString2).get(l)));
                     }
                 }
                 tempFirstString2 = convertedString2;
+
                 if (coeff2 > tempCoeff) {
                     tempCoeff = coeff2;
                     tempFirstString2 = tempSecondString;
@@ -91,17 +103,18 @@ public class SetComparison {
             randomAccessFile.readLine();
             firstTemp = randomAccessFile.getFilePointer();
         }
+
         if (n < m)
             fileWrite.write((tempFirstString2 + ":" + tempSecondString2 + "\n").getBytes());
         randomAccessFile.close();
-        fileWrite.close();
+        return fileWrite;
     }
 
     /**
      * This method compares strings by characters and counts matches
      * @return int value of the matched characters
      */
-    public int coefficientCalculate(String s, String s1) {
+    public int calculateCoefficient(String s, String s1) {
         int count = 0;
         int min = Math.min(s.length(), s1.length());
         for (int i = 0; i < min; i++) {
